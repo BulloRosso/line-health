@@ -1,0 +1,20 @@
+<section class="health-comparison" fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px">
+  <div class="machine" fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="10px">
+    <span class="title">{{ labelMap["lbl.availToday"] }}</span>
+    <div #donut id="donut"></div>
+    <img *ngIf="machine && machine.largeImageUrl" [src]="machine.largeImageUrl" />
+  </div>
+  <div fxFlex fxLayout="column">
+    <lib-machine-history [labelMap]="labelMap"></lib-machine-history>
+    <div *ngFor="let machineI of machines; let index = index">
+      <lib-machine-history (click)="clickedMachine(machineI)" [machine]="machineI" [selected]="machine ? machineI.id === machine.id : false" [labelMap]="labelMap">
+      </lib-machine-history>
+    </div>
+    <ul class="legend">
+      <li class="legend__item item--producing"> {{ labelMap["lbl.producing"] }} </li>
+      <li class="legend__item item--idle"> {{ labelMap["lbl.idle"] }} </li>
+      <li class="legend__item item--unavailable"> {{ labelMap["lbl.unavailable"] }} </li>
+      <li class="legend__item item--noData"> {{ labelMap["lbl.noData"] }} </li>
+    </ul>
+  </div>
+</section>

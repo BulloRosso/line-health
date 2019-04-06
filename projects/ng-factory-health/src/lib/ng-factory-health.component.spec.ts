@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LineHealthComponent } from './line-health.component';
+import { NgFactoryHealthComponent } from './ng-factory-health.component';
 
-describe('LineHealthComponent', () => {
-  let component: LineHealthComponent;
-  let fixture: ComponentFixture<LineHealthComponent>;
+describe('NgFactoryHealthComponent', () => {
+  let component: NgFactoryHealthComponent;
+  let fixture: ComponentFixture<NgFactoryHealthComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LineHealthComponent ]
+      declarations: [ NgFactoryHealthComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LineHealthComponent);
+    fixture = TestBed.createComponent(NgFactoryHealthComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
